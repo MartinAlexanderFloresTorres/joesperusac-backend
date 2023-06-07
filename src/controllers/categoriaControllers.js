@@ -1,5 +1,5 @@
 import Producto from '../models/Producto.js'
-import Categoria from '../models/categoria.js'
+import Categoria from '../models/Categoria.js'
 import validarImagenes from '../helpers/validarImagenes.js'
 import writeImagen from '../helpers/writeImagen.js'
 import isValidId from '../helpers/isValidId.js'
@@ -100,6 +100,12 @@ export const actualizarCategoria = async (req, res) => {
         return res.status(400).json({ message: 'El archivo es demasiado grande' })
       }
 
+      // Eliminar imagen anterior
+      await deleteFile({
+        public_id: categoria.imagen.public_id,
+        folder: 'shop-app/categorias'
+      })
+
       // Guardar imagen
       categoria.imagen = await writeImagen(file, 'shop-app/categorias')
     }
@@ -190,7 +196,10 @@ export const eliminarCategoriaById = async (req, res) => {
 
     // Eliminar imagen de cloudinary
     if (categoria.imagen) {
-      await deleteFile(categoria.imagen)
+      await deleteFile({
+        public_id: categoria.imagen.public_id,
+        folder: 'shop-app/categorias'
+      })
     }
 
     // Eliminar productos de la categoria

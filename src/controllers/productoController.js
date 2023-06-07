@@ -1,5 +1,5 @@
 import Producto from '../models/Producto.js'
-import Categoria from '../models/categoria.js'
+import Categoria from '../models/Categoria.js'
 import validarImagenes from '../helpers/validarImagenes.js'
 import writeImagen from '../helpers/writeImagen.js'
 import deleteFile from '../cloudinary/deleteFile.js'
