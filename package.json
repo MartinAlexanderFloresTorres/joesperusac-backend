@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Proyecto de venta de pizarras MERN STACK.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "NODE",
+    "MONGODB",
+    "REACT",
+    "JAVASCRIPT",
+    "EXPRESS"
+  ],
+  "author": "Martin Alexander Flores Torres",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "cloudinary": "^1.37.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.0",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.2",
+    "shortid": "^2.2.16"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
